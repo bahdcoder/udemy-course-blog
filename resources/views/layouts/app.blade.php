@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
 
     <!-- Scripts -->
     <script>
@@ -107,7 +108,15 @@
         </div>
     </div>
 
+
+
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script>
+            @if(Session::has('success'))
+                toastr.success("{{ Session::get('success') }}")
+            @endif
+    </script>
 </body>
 </html>
