@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
+    @yield('styles')
 
     <!-- Scripts -->
     <script>
@@ -128,6 +129,12 @@
                             <li class="list-group-item">
                                 <a href="{{ route('post.create') }}">Create new post</a>
                             </li>
+
+                            @if(Auth::user()->admin)
+                                <li class="list-group-item">
+                                    <a href="{{ route('settings') }}">Settings</a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 @endif
@@ -152,5 +159,7 @@
                 toastr.info("{{ Session::get('info') }}")
             @endif
     </script>
+
+    @yield('scripts')
 </body>
 </html>
