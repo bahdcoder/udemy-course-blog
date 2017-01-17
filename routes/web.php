@@ -1,5 +1,14 @@
 <?php
 
+Route::post('/subscribe', function(){
+    $email = request('email');
+
+    Newsletter::subscribe($email);
+
+    Session::flash('subscribed', 'Successfully subscribed.');
+    return redirect()->back();
+});
+
 Route::get('/test', function(){
     return App\User::find(1)->profile;
 });
@@ -40,7 +49,7 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
-    Route::get('/home', [
+    Route::get('/dashboard', [
         'uses' => 'HomeController@index',
         'as' => 'home'
     ]);
