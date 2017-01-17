@@ -3,7 +3,7 @@
                 <div class="header-content-wrapper">
                     <div class="logo">
                         <div class="logo-text">
-                            <div class="logo-title">{{ $title }}</div>
+                            <div class="logo-title">{{ $settings->site_name }}</div>
                         </div>
                     </div>
 
