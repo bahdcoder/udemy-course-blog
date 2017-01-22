@@ -104,6 +104,8 @@ class ProfilesController extends Controller
         if($request->has('password'))
         {
             $user->password = bcrypt($request->password);
+            
+            $user->save();
         }
 
         Session::flash('success', 'Account profile updated.');
