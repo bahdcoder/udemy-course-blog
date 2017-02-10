@@ -334,7 +334,7 @@
 
  <script>
     @if(Session::has('subscribed'))
-        toastr.success("{{ Session::get('subscribed') }}")
+        toastr.success("{{ Session::get('subscribed') }}");
     @endif
 </script>
 <!-- ...end JS Script -->
